@@ -26,11 +26,11 @@ def run(method, gama, verbose):
   # calculate all solutions
   if h.check_convergence(matrix_W):
     results = calculate([], matrix_A, matrix_Q, matrix_Q_inverse, vector_b, vector_x0)
-    print("\nSelected iterative method is convergent for this parameter value.")
-    print("\nSolution was found after " + str(len(results)) + " iterations.\n")
+    print("Selected iterative method is convergent for this parameter value.")
+    print("Solution was found after " + str(len(results)) + " iterations:")
     h.output_all_results(results) if verbose else h.output_final_result(results)  
   else:
-    print("\nSelected iterative method is not convergent for this parameter value.\n")
+    print("Selected iterative method is not convergent for this parameter value.\n")
 
 """
 Solve the linear system

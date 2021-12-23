@@ -1,27 +1,20 @@
 from numpy import double
 from solver import run
-from sys import argv
 
-# Check the number of arguments
-if len(argv) not in {3, 4}:
-  print("[ERROR] Wrong number of arguments.")
-  exit()
+print("\n[METHOD: J | GAMA: 5]")
+run("J", double(5), False)
 
-# Check the iterative method
-if argv[1] not in {"J", "GS"}:
-  print("[ERROR] Wrong iterative method.")
-  exit()
+print("[METHOD: J | GAMA: 2]")
+run("J", double(2), False)
 
-# Check the gama parameter
-try:
-  double(argv[2])
-except ValueError:
-  print("[ERROR] Wrong gama parameter.")
-  exit()
+print("[METHOD: J | GAMA: 0.5]")
+run("J", double(0.5), False)
 
-# Check the verbose parameter
-if (len(argv) == 4) and argv[3] != "-v":
-  print("[ERROR] Wrong verbose parameter.")
-  exit()
+print("[METHOD: GS | GAMA: 5]")
+run("GS", double(5), False)
 
-run(argv[1], double(argv[2]), False if (len(argv) == 3) else True)
+print("[METHOD: GS | GAMA: 2]")
+run("GS", double(2), False)
+
+print("[METHOD: GS | GAMA: 0.5]")
+run("GS", double(0.5), False)
